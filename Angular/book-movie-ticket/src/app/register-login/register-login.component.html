@@ -1,0 +1,154 @@
+<div class="alert alert-danger" *ngIf='error'>
+        {{error}}
+    </div>
+    <div class="alert alert-success" *ngIf='message'>
+        {{message}}
+    </div>
+<div class="login-reg-panel bg-warning">
+    <div class="login-info-box">
+        <h2>Have an account?</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <label id="label-register" for="log-reg-show">Login</label>
+        <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+    </div>
+
+    <div class="register-info-box text-dark">
+        <h2>Don't have an account?</h2>
+        <p>Let's Create...</p>
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+            data-target="#exampleModalCenter">Register</button>
+    </div>
+
+    <div class="white-panel">
+        <div>
+            <h1 class="display-2">Login</h1>
+            <form #userLogin='ngForm' (ngSubmit)='login(userLogin)'>
+                <div class="form-group">
+                    <label for="userName">Username</label>
+                    <input name="userName" type="userName" id="userName" class="form-control" #userName='ngModel'
+                        ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="password">password</label>
+                    <input name="password" type="password" id="password" class="form-control" #password='ngModel'
+                        ngModel required>
+                    <div *ngIf='password.touched && password.invalid'>
+                        <div class="text-danger" *ngIf='password.errors.required'>
+                            *This field is mandatory
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Let's Know each other</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #user='ngForm' (ngSubmit)='register(user)'>
+                    <div class="form-group mt-2">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" #fullName='ngModel'
+                            ngModel placeholder="Full Name" required>
+                    </div>
+                    <div *ngIf='fullName.invalid && fullName.touched'>
+                        <div class="alert alert-danger ml" *ngIf='fullName.errors.required'>
+                            this field is mandatory
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <div class="form-group">
+                            <label for="gender">Select Gender</label>
+                            <select class="custom-select" name="gender" id="gender" #gender='ngModel' ngModel required>
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                                <option value="other">other</option>
+                            </select>
+                        </div>
+                        <div *ngIf='gender.invalid && gender.touched'>
+                            <div class="alert alert-danger ml" *ngIf='gender.errors.required'>
+                                this field is mandatory
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="userName">username</label>
+                        <input type="text" id="userName" name="userName" class="form-control" #userName='ngModel'
+                            ngModel placeholder="Username" required>
+                    </div>
+                    <div *ngIf='userName.invalid && userName.touched'>
+                        <div class="alert alert-danger ml" *ngIf='userName.errors.required'>
+                            this field is mandatory
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="emailId">Email</label>
+                        <input type="email" id="emailId" name="emailId" class="form-control" #emailId='ngModel' ngModel
+                            placeholder="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+                    <div *ngIf='emailId.invalid && emailId.touched'>
+                        <div class="alert alert-danger ml" *ngIf='emailId.errors.required'>
+                            *this field is mandatory
+                        </div>
+                        <div class="alert alert-danger ml" *ngIf='emailId.errors.pattern'>
+                            invalid email
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="password">password</label>
+                        <input type="password" id="password" name="password" class="form-control" #password='ngModel'
+                            ngModel placeholder="password" required
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    </div>
+                    <div *ngIf='password.invalid && password.touched'>
+                        <div class="alert alert-danger" *ngIf='password.errors.required'>
+                            this field is mandatory
+                        </div>
+                        <div class="alert alert-danger" *ngIf='password.errors.pattern'>
+                            4 to 8 characters, should include one uppercase, one lowercase and one number
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="mobileNumber">mobile</label>
+                        <input type="text" id="mobileNumber" name="mobileNumber" class="form-control"
+                            #mobileNumber='ngModel' ngModel placeholder="mobileNumber" required pattern="[0-9]{10}">
+                    </div>
+                    <div *ngIf='mobileNumber.invalid && mobileNumber.touched'>
+                            <div class="alert alert-danger ml" *ngIf='mobileNumber.errors.required'>
+                                this field is mandatory
+                            </div>
+                            <div class="alert alert-danger ml" *ngIf='mobileNumber.errors.pattern'>
+                                Mobile number should be of 10 digits
+                            </div>
+                        </div>
+                    <div class="form-group mt-2">
+                        <label for="dateOfBirth">date of birth</label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control"
+                            #dateOfBirth='ngModel' ngModel placeholder="dob" required>
+                    </div>
+                    <div *ngIf='dateOfBirth.invalid && dateOfBirth.touched'>
+                            <div class="alert alert-danger ml" *ngIf='dateOfBirth.errors.required'>
+                                this field is mandatory
+                            </div>
+                        </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg btn-block btn-info" (click) ='navigate()'>Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="jumbotron bg-dark">
+    <div class="card bg-warning card-group text-light" style="width: 10rem; border-radius: 30%">
+        <img src="https://image3.mouthshut.com/images/imagesp/925838372s.png"
+            class="card-img-top mx-4 my-4 img-thumbnail" height="150" width="100" alt="...">
+    </div>
+    <p class="lead text-dark">City Pride Cinemas</p>
+</div>
+<div class="col-md-6 float-left mt-4 card-horizontal" *ngFor='let movie of movies'>
+
+    <img src="{{movie.image}}" alt="" height="250px" class="card-img-center">
+    <div>
+        <h4 class="ml-4">{{movie.name}}</h4>
+        <p class="blockquote-footer ml-4"> duration: {{movie.duration}} hrs</p> <br>
+        <a routerLink='/'>{{movie.timing}}</a>
+        <div class='mt-4' *ngIf = 'isLoggedIn()'>
+            <button type="button" name="" id="" class="btn btn-outline-success btn-lg btn-block"
+                (click)='bookTicket(movie)'>book now!</button>
+        </div>
+        <div class='mt-4' *ngIf = '!isLoggedIn()'>
+            <button type="button" name="" id="" class="btn btn-outline-success btn-lg btn-block"
+                (click)='book()'>book now!</button>
+        </div>
+    </div>
+
+</div>

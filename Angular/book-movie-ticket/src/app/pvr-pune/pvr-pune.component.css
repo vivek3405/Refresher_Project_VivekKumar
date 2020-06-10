@@ -1,0 +1,12 @@
+.jumbotron{
+    height: 200px !important;
+    background: url('https://www.seelatest.com/images/upcoming-bollywood-movies-2020-list-seelatest.jpg');
+    background-size: contain;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+a{
+    text-decoration: none;
+}

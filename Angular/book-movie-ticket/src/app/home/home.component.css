@@ -1,0 +1,40 @@
+.bg-warnin{
+    background: url('https://s.studiobinder.com/wp-content/uploads/2019/12/The-Best-Order-to-Watch-Marvel-Movies-Featured-StudioBinder.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    height: 300px !important;
+}
+.size0{
+    width: 100%;
+    height: 100%;
+}
+.size1{
+    width: 20%;
+    height: 100%;
+}
+.size2{
+    width: 80%;
+    height: 100%;
+}
+.mt-4{
+    margin-top: 7.5% !important;
+}
+.mt-3{
+    margin-top: 5.3% !important;
+}
+a{
+    text-decoration: none;
+}
+.display-4{
+    font-size: 165% !important;
+}
+.mt{
+    margin-top: -2rem !important;
+}
+.margine{
+    margin-top: 45% !important;
+    background: url('./pngtree-european-business-movie-poster-board-vector-background-material-image_134683.jpg');
+    background-size: cover;
+}

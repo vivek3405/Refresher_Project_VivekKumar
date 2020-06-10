@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+    <a class="navbar-brand ml-4" routerLink="pune" *ngIf='location()'>
+        <h3>mov<span class="text-warning">!</span>e<i class="fas fa-ticket-alt     text-warning"></i>t<span
+                class="text-warning">!</span>ckets </h3>
+    </a>
+    <a class="navbar-brand ml-4" routerLink="mumbai" *ngIf='locationMumbai()'>
+        <h3>mov<span class="text-warning">!</span>e<i class="fas fa-ticket-alt     text-warning"></i>t<span
+                class="text-warning">!</span>ckets </h3>
+    </a>
+    <a class="navbar-brand ml-4" routerLink="bangalore" *ngIf='locationBangalore()'>
+        <h3>mov<span class="text-warning">!</span>e<i class="fas fa-ticket-alt     text-warning"></i>t<span
+                class="text-warning">!</span>ckets </h3>
+    </a>
+    <a class="navbar-brand ml-4" *ngIf = 'brand()'>
+        <h3>mov<span class="text-warning">!</span>e<i class="fas fa-ticket-alt     text-warning"></i>t<span
+                class="text-warning">!</span>ckets </h3>
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 " *ngIf='brand()'>
+            <li class="nav-item ">
+                <button class="btn btn-outine-success navbar-brand" (click)='openDialog()'>Location</button>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf='location()'>
+            <li class="nav-item">
+                 <i class="btn btn-outline-warning" (click)='openDialog()'>  <i class="fa fa-location-arrow" aria-hidden="true"></i> Pune</i>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf='locationBangalore()'>
+            <li class="nav-item">
+                 <i class="btn btn-outline-warning" (click)='openDialog()'>  <i class="fa fa-location-arrow" aria-hidden="true"></i> Bangalore</i>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf='locationMumbai()'>
+            <li class="nav-item">
+                 <i class="btn btn-outline-warning"(click)='openDialog()'>  <i class="fa fa-location-arrow" aria-hidden="true"></i>Mumbai</i>
+            </li>
+
+        </ul>
+        
+        <ul class="navbar-nav mt-2 mt-lg-0 ml" *ngIf='!isLoggedIn()'>
+            <li class="nav-item">
+                <a routerLink="login"><button class="btn btn-warning navbar-brand text-dark">Login/Signup</button></a>
+
+            </li>
+
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0 mr-auto" *ngIf='isLoggedIn()'>
+                <li class="nav-item">
+                    <p class="mt-2">
+                            <a data-toggle="collapse" href="#contentId" aria-expanded="false" aria-controls="contentId">
+                                <i class="fa fa-bars fa-2x text-warning" aria-hidden="true"></i>
+                            </a>
+                        </p>
+    
+                </li>
+    
+            </ul>
+        
+
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+    </div>
+</nav>
+    <div class="collapse bg-dark text-light" id="contentId" *ngIf='isLoggedIn()'>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="ticket">Purchase History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="profile">Settings</a>
+            </li>
+            
+            <li class="nav-item ml-auto">
+                    <button (click)='logout()' class="btn btn-warning navbar-brand text-dark">Logout</button>
+                </li>
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0 mr-auto">
+                
+    
+            </ul>
+    </div>

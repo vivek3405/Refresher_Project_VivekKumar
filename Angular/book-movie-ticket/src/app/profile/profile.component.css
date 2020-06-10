@@ -1,0 +1,19 @@
+.image1{
+    background: url('https://in.bmscdn.com/webin/profile/user-profile.png')
+}
+.container{
+    width: 10%;
+}
+.length{
+    width: 100px;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+.ml-auto{
+    margin-left: 80% !important
+}
+.ml{
+    margin-left: 7%
+}

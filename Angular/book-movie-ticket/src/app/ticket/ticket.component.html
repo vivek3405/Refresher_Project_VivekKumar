@@ -1,0 +1,30 @@
+<div class="alert alert-success">{{this.message}}</div>
+<section class="container bg-secondary">
+    <h1>Purchase History</h1>
+    <div class="row">
+        <article class="card fl-left bg-warning" *ngFor = 'let ticket of tickets'>
+            <section class="date">
+                <time datetime="23th feb">
+                    <span>A</span><span></span>
+                </time>
+            </section>
+            <section class="card-cont">
+                <small>theater -  {{ticket.theaterName}}</small>
+                <h3>movie - {{ticket.movieName}} </h3>
+                <div class="even-date">
+                    <i class="fa fa-calendar"></i>
+                    <time>
+                        <span>{{ticket.bookingDate}}</span>
+                        <span>time : {{ticket.movieTime}}PM</span>
+                    </time>
+                </div>
+                <div class="even-info">
+                    <p>
+                        booking ID - {{ticket.bookingId}}
+                    </p>
+                </div>
+                <a class="btn btn-primary" (click)='deleteTicket(ticket.userId)'>cancel</a>
+            </section>
+        </article>
+    </div>
+</section>

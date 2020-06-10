@@ -1,0 +1,112 @@
+<div class="main row">
+    <div class="sub1">
+        <div class="col-md-6 float-left mt-4 ml-4 card-horizontal">
+            <img class="card-img-top " [src]="this.image" height="400px" width="500px" alt="">
+            <div class="card-body">
+                <h4 class="card-title text-center bg-warning">{{this.movieName}}</h4>
+                <p class="card-text text-center">{{this.theaterName}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="sub2 bg-secondary">
+        <form #userTicket='ngForm' (ngSubmit)='addTicket(userTicket)'>
+            <div class=" container form-group mt-2 ">
+                <input type="hidden" id="movieId" name="movieId" class="form-control" [(ngModel)]='this.movieId'
+                    placeholder="movie Id" required>
+            </div>
+            <div class=" container form-group mt-2 ">
+                <input type="hidden" id="userId" name="userId" class="form-control" [(ngModel)]='this.userId' required>
+            </div>
+            <div class=" container form-group mt-2 ">
+                <input type="hidden" id="bookingId" name="bookingId" class="form-control" [(ngModel)]='this.bookingId'
+                    placeholder="booking Id" readonly>
+            </div>
+            <div class="container form-group mt-2 ">
+                <input type="hidden" id="theaterId" name="theaterId" class="form-control" [(ngModel)]='this.theaterId'
+                    placeholder="theater Id" required>
+            </div>
+            <div class="container form-group mt-2 ">
+
+                <input type="hidden" id="movieName" name="movieName" class="form-control" [(ngModel)]='this.movieName'
+                    placeholder="movie Nmae" required>
+            </div>
+            <div class="container form-group mt-2 ">
+
+                <input type="hidden" id="theaterName" name="theaterName" class="form-control"
+                    [(ngModel)]='this.theaterName' placeholder="theater Nmae" required>
+            </div>
+            <div class=" container form-group mt">
+
+                <label for="date">Choose Date</label>
+                <select multiple class="form-control bg-warning display-4" name="date" id="date">
+                    <option (click)="date()" value="9/06/2020">9/06/2020</option>
+                    <option (click)="dateA()" value="10/06/2020">10/06/2020</option>
+                    <option (click)="dateB()" value="11/06/2020">11/06/2020</option>
+                </select>
+
+            </div>
+
+            <div class="form-group container">
+                <label for="time">choose Time</label>
+                <select multiple class="form-control bg-warning" name="time" id="time">
+                    <option (click)="time()" value="12">12 pm</option>
+                    <option (click)="timeA()" value="2">2 pm</option>
+                    <option (click)="timeB()" value="4">4 pm</option>
+                </select>
+            </div>
+
+            <div class="form-group container">
+                <label for="test">choose number of seats</label>
+                <select multiple class="form-control bg-warning" name="test" id="test">
+                    <option (click)="cost()" value="1">1</option>
+                    <option (click)="costA()" value="2">2</option>
+                    <option (click)="costB()" value="3">3</option>
+                </select>
+            </div>
+            <div class=" container form-group">
+                <input type="hidden" id="seat" name="seat" class="form-control" #seat='ngModel'
+                    [(ngModel)]='this.carrier' required>
+            </div>
+            <div class=" container form-group mt-2 ">
+                <input type="hidden" id="movieTime" name="movieTime" class="form-control" #movieTime='ngModel'
+                    [(ngModel)]='this.carrierTime' required>
+            </div>
+            <div class=" container form-group mt-2 ">
+                <input type="hidden" id="bookingDate" name="bookingDate" class="form-control" #bookingDate='ngModel'
+                    [(ngModel)]='this.carrierDate' required>
+            </div>
+            <div class=" container form-group">
+                <label for="totalCost">total cost</label>
+                <input type="text" id="totalCost" name="totalCost" class="form-control my-select" #totalCost='ngModel'
+                    [(ngModel)]='this.total' readonly>
+            </div>
+            <button type="submit" class="btn btn-lg btn-block btn-info" data-toggle="modal"
+                data-target="#exampleModalCenter">book ticket</button>
+        </form>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Congrats</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" *ngIf='error'>
+                    {{error}}
+                </div>
+                <div class="alert alert-success" *ngIf='message'>
+                    {{message}}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close" (click) = 'ticket()'>My Ticket</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+[
+    {
+        "name": "gulabo sitabo",
+        "image": "https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gulabo-sitabo-et00103015-20-05-2020-03-09-30.jpg",
+        "duration": 2.5,
+        "timing" : "10 AM(Screen 1)  12:15 PM(Screen 2)  1:15 PM(Screen 3)  4 PM(Screen 1)",
+        "movieId" : "GS10"
+    }, {
+        "name": "In the heights",
+        "image": "https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/in-the-heights-et00120246-13-12-2019-01-08-59.jpg",
+        "duration": 1.5,
+        "timing" : "10 AM(Screen 1)  12:15 PM(Screen 2)  1:15 PM(Screen 3)  4 PM(Screen 1)",
+        "movieId" : "ITH20"
+    }, {
+        "name": "bachhan pandey",
+        "image": "https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/bachchan-pandey-et00108170-26-07-2019-11-17-40.jpg",
+        "duration": 2,
+        "timing" : "10 AM(Screen 1)  12:15 PM(Screen 2)  1:15 PM(Screen 3)  4 PM(Screen 1)",
+        "movieId" : "BP30"
+    },
+    {
+        "name": "Artemis Faul",
+        "image": "https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/artermis-fowl-et00089430-28-11-2018-11-59-39.jpg",
+        "duration": 1.5,
+        "timing" : "10 AM(Screen 1)  12:15 PM(Screen 2)  1:15 PM(Screen 3)  4 PM(Screen 1)",
+        "movieId" : "AF40"
+    }
+   
+]
